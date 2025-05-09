@@ -16,5 +16,5 @@ export const baseOptions: BaseLayoutProps = {
       active: 'nested-url',
     },
   ],
-  githubUrl: 'https://github.com',
+  githubUrl: 'https://github.com/Monarch-Development',
 };
