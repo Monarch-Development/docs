@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { FaGithub, FaDiscord } from 'react-icons/fa';
 
 const socialLinks = [
@@ -74,13 +73,13 @@ export default function HomePage() {
           {teamMembers.map((member) => (
             <div key={member.name} className="flex flex-col items-center">
               <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
-                <Image
+                <img
                   src={`/static/img/team/${member.avatar}`}
                   alt={`${member.name}'s avatar`}
                   width={96}
                   height={96}
-                  className="object-cover w-full h-full"
-                />
+                  className="object-cover w-full h-full">
+                </img>
               </div>
               <h4 className="font-semibold">{member.name}</h4>
               <p className="text-black/70 dark:text-white/70">{member.role}</p>
