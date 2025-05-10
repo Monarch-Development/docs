@@ -1,0 +1,39 @@
+---
+title: Configuration
+---
+
+## Blips Configuration
+
+```lua title="config/client.lua"
+  ["fib"] = {
+    label = "FIB Headquarter",
+    coords = vec3(136.08, -761.74, 46.00),
+    display = 2,
+    sprite = 60,
+    color = 40,
+    alpha = 255,
+    scale = 0.8,
+  },
+```
+
+- Blip ID (Unique): `string` 
+- Blip Options: `table`
+  - label?: `string`
+    - The name of the blip displayed in the map (default: Blip)
+  - coords: `vector3[]`
+    - Coords of the blip
+  - display?: `number`
+    - Settings for blip visibility (default: 2)
+      - 0 = Not Displays
+      - 2 = Map&Minimap (Selectable on Map)
+      - 3 = Only Map
+      - 5 = Only Minimap 
+      - 8 = Map&Minimap (Not selectable on Map)
+  - sprite?: `number` 
+    - Icon of the blip, for codes see https://docs.fivem.net/docs/game-references/blips/#blips
+  - color?: `number`
+    - Color of the blip, for codes see https://docs.fivem.net/docs/game-references/blips/#blip-colors
+  - alpha?: `number`
+    - Transparency of the blip (0 = transparent, 255 = opaque).
+  - scale?: `number`
+    - Scale (size) of the blip on the map (e.g. 0.8 = slightly smaller).
