@@ -1,5 +1,5 @@
 {
     "title": "mnr_blips",
     "pages": ["installation", "configuration", "functions"],
-    "defaultOpen": true
+    "defaultOpen": false
 }
