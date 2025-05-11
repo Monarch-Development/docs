@@ -1,5 +1,6 @@
 {
     "title": "mnr_blips",
+    "icon": "Star",
     "pages": ["installation", "configuration", "functions"],
     "defaultOpen": false
 }
