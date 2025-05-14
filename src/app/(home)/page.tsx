@@ -14,7 +14,8 @@ const teamMembers = [
   { name: 'Arctos', role: 'Team Manager', avatar: 'arctos.png' },
   { name: 'enty', role: 'Developer', avatar: 'enty.png' },
   { name: 'Mustache_dom', role: 'Developer', avatar: 'mustache_dom.png' },
-  { name: 'Knoblauchbrot', role: 'Developer', avatar: 'knoblauchbrot.png' }
+  { name: 'Knoblauchbrot', role: 'Developer', avatar: 'knoblauchbrot.png' },
+  { name: 'MadCap', role: 'Developer', avatar: 'madcap.png'}
 ];
 
 export default function HomePage() {
