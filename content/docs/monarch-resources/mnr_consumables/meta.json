@@ -1,0 +1,6 @@
+{
+    "title": "mnr_consumables",
+    "icon": "Hamburger",
+    "pages": ["installation", "guides"],
+    "defaultOpen": false
+}

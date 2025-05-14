@@ -1,0 +1,6 @@
+{
+    "title": "Guides",
+    "icon": "BookCheck",
+    "pages": ["creating-consumables"],
+    "defaultOpen": false
+}

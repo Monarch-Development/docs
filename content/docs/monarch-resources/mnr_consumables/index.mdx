@@ -1,0 +1,35 @@
+---
+title: Monarch Consumables
+description: Extension of ox_inventory for consumables
+---
+
+The script aims to bring the effect and status configuration back into the items.lua of ox_inventory.
+
+<GithubInfo 
+  owner="Monarch-Development" 
+  repo="mnr_consumables" 
+  className="border border-purple-600 rounded-md p-4 bg-gradient-to-r from-purple-600 to-black no-underline"
+/>
+
+## Innovations
+- Save time in consumables configuration
+- Have everything under control in a single file (ox_inventory items.lua)
+- No configuration needed in the script
+- The item function is triggered with a simple server-side export that determines the category and function of the item
+- Added player alteration effect in item configuration with preset effects
+
+## Performance
+
+| **SITUATION**                | **RESMON** |
+| ---------------------------- | ---------- |
+| Idle (Average consumption)   | 0.00 ms    |
+| Max (When applying effect)   | 0.01 ms    |
+
+<Callout title="ATTENTION" type="warn">
+  These values ​​are purely indicative, performance tested with:
+  - CPU: AMD Ryzen 5 5600X
+  - MOBO: Asus Rog Strix B550 E-Gaming
+  - RAM: Crucial Ballistix 2x8GB CL16 3600MHz
+  - SSD: Samsung 970 EVO+ 1TB
+  - VGA: Sapphire AMD RX6600XT Nitro+
+</Callout>

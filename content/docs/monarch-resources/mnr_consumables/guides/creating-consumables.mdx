@@ -1,0 +1,54 @@
+---
+title: Creating Consumables
+icon: Hamburger
+description: Guide for create consumables
+---
+
+To configure the basic item, the procedure to follow is that of ox_inventory, for further information consult https://overextended.dev/ox_inventory/Guides/creatingItems
+
+<Callout title="SOLUTION" type="info">
+  To show the change that my script brings I will use the basic burger configuration that you can find in the ox_inventory documentation
+</Callout>
+
+```lua title="Burger"
+["burger"] = {
+  label = "Burger",
+  weight = 220,
+  stack = true,
+  close = true,
+  client = {
+      --- Removed status = { hunger = 200000 },
+      anim = {
+          dict = 'mp_player_inteat@burger',
+          clip = 'mp_player_int_eat_burger_fp'
+      },
+      prop = {
+          model = 'prop_cs_burger_01',
+          pos = { x = 0.02, y = 0.02, z = -0.02},
+          rot = { x = 0.0, y = 0.0, z = 0.0}
+      },
+      usetime = 2500,
+  },
+  --- mnr_consumables Addition
+  server = {
+      export = "mnr_consumables.consumable",
+      effect = {type = "alcol", name = "drunk", duration = 30},
+      status = {hunger = 0, thirst = 20, stress = 0},
+  },
+}
+```
+
+- effect?: table
+  - type: string
+    - [BETA] Available types: "alcol", "drug", "doping"
+  - name: string
+    - Available names: "drunk", "verydrunk", "ondrugs", "onheavydrugs", "doped"
+  - duration: number
+    - Number (in seconds) that the visual effect remains active
+- status?: table
+  - hunger?: number
+    - value (0 - 100)(%) that adds hunger value
+  - thirst?: number
+    - value (0 - 100)(%) that adds thirst value
+  - stress?: number
+    - value (0 - 100)(%) that removes stress value [ESX don't have a stress system atm]

@@ -1,0 +1,37 @@
+---
+title: Installation
+icon: Download
+---
+
+## Steps
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Steps>
+  <Step>
+  Download the resource (main or release)
+  </Step>
+  <Step>
+  Extract the .zip file
+  </Step>
+  <Step>
+  Make sure the resource name is `mnr_consumables` to make it work properly
+  </Step>
+  <Step>
+  Make sure you install all the listed below dependencies and run them following the order
+  </Step>
+</Steps>
+
+## Dependencies and Start Order
+
+```mdx title="server.cfg"
+ensure ox_lib
+ensure (Framework)
+ensure (Framework Addons)
+ensure ox_inventory
+ensure mnr_blips
+```
+
+<Callout title="WARNING" type="warn">
+  The `(Framework)` and `(Framework Addons)` parts are just indicative, replace them with your framework etc.
+</Callout>
