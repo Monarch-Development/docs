@@ -1,5 +1,5 @@
 {
     "title": "Monarch Resources",
-    "pages": ["mnr_blips"],
+    "pages": ["mnr_blips", "mnr_consumables"],
     "defaultOpen": true
 }
