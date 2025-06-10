@@ -160,7 +160,7 @@ export default function HomePage() {
 
       <footer className="py-6 bg-white/70 dark:bg-black/90 text-center">
         <p className="text-black/60 dark:text-white/60">
-          © {typeof window !== "undefined" ? new Date().getFullYear() : "2025"} Monarch Development
+          © {new Date().getFullYear()} Monarch Development
         </p>
       </footer>
     </main>
