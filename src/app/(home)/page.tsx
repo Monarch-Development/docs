@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
 import { FaGithub, FaDiscord, FaUsers, FaBullseye, FaCogs, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -113,14 +114,14 @@ export default function HomePage() {
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
-              {teamMembers.map((member, idx) => (
+              {teamMembers.map((member) => (
                 <div
                   key={`${member.name}-${member.role}`}
                   className="flex-shrink-0 w-full flex flex-col items-center px-4"
                   style={{ minWidth: "100%" }}
                 >
                   <div className="w-28 h-28 rounded-full overflow-hidden mb-4 bg-white dark:bg-black shadow-lg border-4 border-purple-200 dark:border-purple-800 transition-all duration-500">
-                    <img
+                    <Image
                       src={`/img/team/${member.avatar}`}
                       alt={`${member.name}'s avatar`}
                       width={112}
