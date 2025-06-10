@@ -1,10 +1,11 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import Image from 'next/image';
 
 export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
       <>
-        <img width="30" height="30" src="static/img/logo.png" aria-label="Logo"></img>
+        <Image src="/img/logo.png" alt="Logo" width="30" height="30" />
         Monarch Development
       </>
     ),
