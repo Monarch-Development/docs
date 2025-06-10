@@ -4,7 +4,7 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
       <>
-        <img width="30" height="30" src="static/img/logo.png" aria-label="Logo"></img>
+        <img width="30" height="30" src="public/img/logo.png" aria-label="Logo"></img>
         Monarch Development
       </>
     ),
