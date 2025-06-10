@@ -10,7 +10,7 @@ const inter = Inter({
 export const metadata = {
   title: 'Project Monarch',
   icons: {
-    icon: '/public/img/logo.ico',
+    icon: '/static/img/logo.ico',
   },
 };
 
