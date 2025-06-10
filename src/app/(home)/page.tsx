@@ -5,7 +5,7 @@ import { FaGithub, FaDiscord } from 'react-icons/fa';
 
 const socialLinks = [
   { icon: FaGithub, href: 'https://github.com/Monarch-Development' },
-  { icon: FaDiscord, href: 'https://discord.com/invite/RxpNTx2YKZ' },
+  { icon: FaDiscord, href: 'https://discord.com/invite/WKtk65yBC6' },
 ];
 
 const teamMembers = [
