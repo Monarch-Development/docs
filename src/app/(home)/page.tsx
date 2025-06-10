@@ -121,7 +121,7 @@ export default function HomePage() {
                   style={{ minWidth: "100%" }}
                 >
                   <div className="w-28 h-28 rounded-full overflow-hidden mb-4 bg-white dark:bg-black shadow-lg border-4 border-purple-200 dark:border-purple-800 transition-all duration-500">
-                    <img
+                    <Image
                       src={`/static/img/team/${member.avatar}`}
                       alt={`${member.name}'s avatar`}
                       width={112}
