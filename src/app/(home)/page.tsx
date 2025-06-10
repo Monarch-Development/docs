@@ -39,10 +39,10 @@ export default function HomePage() {
       <section className="relative pt-0 overflow-hidden">
         <div className="absolute inset-0 animate-gradient bg-gradient-to-br from-purple-200 via-white to-purple-300 dark:from-purple-900 dark:via-black dark:to-purple-950 opacity-40" />
         <div className="relative z-10 flex flex-col items-center justify-center text-center py-36 px-4">
-          <h1 className="text-6xl font-extrabold mb-4 bg-gradient-to-r from-purple-700 via-purple-500 to-purple-300 bg-clip-text text-transparent drop-shadow-lg">
+          <h1 className="text-4xl font-extrabold mb-4 bg-gradient-to-r from-purple-700 via-purple-500 to-purple-300 bg-clip-text text-transparent drop-shadow-lg">
             Monarch Development
           </h1>
-          <p className="text-2xl mb-6 text-black/80 dark:text-white/80 font-medium">
+          <p className="text-1xl mb-6 text-black/80 dark:text-white/80 font-medium">
             Built by community, for community
           </p>
           <div className="flex gap-4 mb-8 bg-white/70 dark:bg-black/40 p-4 rounded-xl shadow-lg backdrop-blur">
