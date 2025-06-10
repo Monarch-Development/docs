@@ -1,12 +1,11 @@
-"use client";
-
-import Link from "next/link";
-import { useRef, useEffect, useState } from "react";
-import { FaGithub, FaDiscord, FaUsers, FaBullseye, FaCogs, FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+'use client';
+import Link from 'next/link';
+import { useRef, useEffect, useState } from 'react';
+import { FaGithub, FaDiscord, FaUsers, FaBullseye, FaCogs, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/Monarch-Development" },
-  { icon: FaDiscord, href: "https://discord.com/invite/WKtk65yBC6" },
+  { icon: FaGithub, href: 'https://github.com/Monarch-Development' },
+  { icon: FaDiscord, href: 'https://discord.com/invite/WKtk65yBC6' },
 ];
 
 const teamMembers = [
