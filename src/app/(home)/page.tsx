@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
 import { FaGithub, FaDiscord, FaUsers, FaBullseye, FaCogs, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
