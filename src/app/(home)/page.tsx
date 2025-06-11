@@ -82,10 +82,7 @@ export default function HomePage() {
               icon: <FaStar className="text-purple-700 text-3xl mb-2" />,
             },
           ].map((card, i) => (
-            <div
-              key={i}
-              className="bg-white/80 dark:bg-black/60 backdrop-blur-lg rounded-2xl p-8 shadow-lg hover:scale-105 hover:shadow-2xl transition-all flex flex-col items-center text-center border border-purple-200 dark:border-purple-900"
-            >
+            <div key={i} className="bg-white/80 dark:bg-black/60 backdrop-blur-lg rounded-2xl p-8 shadow-lg hover:scale-105 hover:shadow-2xl transition-all flex flex-col items-center text-center border border-purple-200 dark:border-purple-900">
               {card.icon}
               <h3 className="text-2xl font-bold mb-2 text-purple-700 dark:text-purple-200">{card.title}</h3>
               <p className="text-black/80 dark:text-white/70">{card.content}</p>
@@ -100,34 +97,15 @@ export default function HomePage() {
           <p className="text-black/70 dark:text-white/70">Extraordinary people behind our success</p>
         </div>
         <div className="relative max-w-xl mx-auto flex items-center">
-          <button
-            aria-label="Previous"
-            onClick={prev}
-            className="absolute left-0 z-10 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 transition disabled:opacity-50"
-            style={{ top: "50%", transform: "translateY(-50%)" }}
-          >
+          <button aria-label="Previous" onClick={prev} className="absolute left-0 z-10 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 transition disabled:opacity-50" style={{ top: "50%", transform: "translateY(-50%)" }}>
             <FaChevronLeft className="text-purple-500 dark:text-purple-300" size={28} />
           </button>
           <div className="overflow-hidden w-full">
-            <div
-              className="flex transition-transform duration-700 ease-in-out"
-              style={{ transform: `translateX(-${current * 100}%)` }}
-            >
+            <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${current * 100}%)` }}>
               {teamMembers.map((member) => (
-                <div
-                  key={`${member.name}-${member.role}`}
-                  className="flex-shrink-0 w-full flex flex-col items-center px-4"
-                  style={{ minWidth: "100%" }}
-                >
+                <div key={`${member.name}-${member.role}`} className="flex-shrink-0 w-full flex flex-col items-center px-4" style={{ minWidth: "100%" }}>
                   <div className="w-28 h-28 rounded-full overflow-hidden mb-4 bg-white dark:bg-black shadow-lg border-4 border-purple-200 dark:border-purple-800 transition-all duration-500">
-                    <img
-                      src={`/img/team/${member.avatar}`}
-                      alt={`${member.name}'s avatar`}
-                      width={112}
-                      height={112}
-                      className="object-cover w-full h-full"
-                      loading="lazy"
-                    />
+                    <img src={`/img/team/${member.avatar}`} alt={`${member.name}'s avatar`} width={112} height={112} className="object-cover w-full h-full" loading="lazy"/>
                   </div>
                   <h4 className="font-semibold text-xl text-purple-700 dark:text-purple-200">{member.name}</h4>
                   <p className="text-black/70 dark:text-white/70">{member.role}</p>
@@ -135,25 +113,13 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <button
-            aria-label="Next"
-            onClick={next}
-            className="absolute right-0 z-10 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 transition disabled:opacity-50"
-            style={{ top: "50%", transform: "translateY(-50%)" }}
-          >
+          <button aria-label="Next" onClick={next} className="absolute right-0 z-10 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 transition disabled:opacity-50" style={{ top: "50%", transform: "translateY(-50%)" }}>
             <FaChevronRight className="text-purple-500 dark:text-purple-300" size={28} />
           </button>
         </div>
 
         <div className="flex justify-center gap-2 mt-6">
-          {teamMembers.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrent(idx)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${current === idx ? "bg-purple-500 dark:bg-purple-300 scale-125" : "bg-purple-200 dark:bg-purple-800"}`}
-              aria-label={`Go to member ${idx + 1}`}
-            />
-          ))}
+          {teamMembers.map((_, idx) => (<button key={idx} onClick={() => setCurrent(idx)} className={`w-3 h-3 rounded-full transition-all duration-300 ${current === idx ? "bg-purple-500 dark:bg-purple-300 scale-125" : "bg-purple-200 dark:bg-purple-800"}`} aria-label={`Go to member ${idx + 1}`}/>))}
         </div>
       </section>
 
