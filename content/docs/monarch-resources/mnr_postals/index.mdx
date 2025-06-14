@@ -1,0 +1,38 @@
+---
+title: Monarch Postals
+description: Remake of nearest-postal by DevBlocky
+---
+
+Monarch Postals allows players to set a postal destination on the map with a simple command, this script isn't made from scratch but is a remake of [nearest-postal](https://github.com/DevBlocky/nearest-postal) by DevBlocky
+
+<GithubInfo 
+  owner="Monarch-Development" 
+  repo="mnr_postals" 
+  className="border border-purple-600 rounded-md p-4 bg-gradient-to-r from-purple-600 to-black no-underline"
+/>
+
+## Innovations
+- Removed 3dtext feature that showed nearby postal because it was resmon intensive
+- Completely revamped the code to use the optimized ox_lib functions
+- Reworked the data coordinates (.json table > .lua vec2) and reduced the digits of the numbers for each coordinate
+
+## Compatible Postal Maps
+- [New Atlas Postal Map](https://forum.cfx.re/t/release-postal-code-map-minimap-new-improved-v1-3/147458)
+- [OCRP Postal Map](https://forum.cfx.re/t/ocrp-postal-and-minimap-server-side/992775)
+- [Oulsen Satmap](https://forum.cfx.re/t/release-free-high-resolution-satellite-map-with-custom-postals/2503527)
+
+## Performance
+
+| **SITUATION**                | **RESMON** |
+| ---------------------------- | ---------- |
+| Idle (Average consumption)   | 0.00 ms    |
+| Max (In first Set Waypoint)  | 0.01 ms    |
+
+<Callout title="ATTENTION" type="warn">
+  These values are purely indicative, performance tested with:
+  - CPU: AMD Ryzen 5 5600X
+  - MOBO: Asus Rog Strix B550 E-Gaming
+  - RAM: Crucial Ballistix 2x8GB CL16 3600MHz
+  - SSD: Samsung 970 EVO+ 1TB
+  - VGA: Sapphire AMD RX6600XT Nitro+
+</Callout>

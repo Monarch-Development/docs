@@ -1,0 +1,6 @@
+{
+    "title": "mnr_postals",
+    "icon": "MapPin",
+    "pages": ["installation", "configuration"],
+    "defaultOpen": false
+}

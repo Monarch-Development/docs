@@ -1,0 +1,22 @@
+---
+title: Configuration
+icon: Settings
+---
+
+## Blips Configuration
+
+```lua title="config/config.lua"
+return {
+  CommandName = "gps",
+  PostalFilePath = "data.ocrp",
+}
+```
+
+- CommandName: `string`
+  - The name of the command to set the waypoint (default: "gps")
+- PostalFilePath: `string`
+  - label?: `string`
+    - String indicating the path to the file containing the postal coordinates (default: "data.ocrp")
+      - `"data.new"` --> https://forum.cfx.re/t/release-postal-code-map-minimap-new-improved-v1-3/147458
+      - `"data.ocrp"` --> https://forum.cfx.re/t/ocrp-postal-and-minimap-server-side/992775
+      - `"data.oulsen"` --> https://forum.cfx.re/t/release-free-high-resolution-satellite-map-with-custom-postals/2503527

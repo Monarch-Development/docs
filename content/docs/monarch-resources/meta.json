@@ -1,5 +1,5 @@
 {
     "title": "Monarch Resources",
-    "pages": ["presets", "mnr_blips", "mnr_cayo", "mnr_consumables"],
+    "pages": ["presets", "mnr_blips", "mnr_cayo", "mnr_consumables", "mnr_postals"],
     "defaultOpen": true
 }
