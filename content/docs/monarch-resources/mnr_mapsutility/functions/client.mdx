@@ -1,0 +1,53 @@
+---
+title: Client
+icon: User
+description: Here you'll find all client exports
+---
+
+## CreateBlip
+
+Creates a blip from external scripts
+
+```lua title="Example"
+exports.mnr_mapsutility:CreateBlip("blipid", {
+    label = "Example Blip",
+    coords = vec3(0.0, 0.0, 0.0),
+    display = 2,
+    sprite = 93,
+    color = 0,
+    alpha = 255,
+    scale = 0.8,
+})
+```
+
+- Blip ID (Unique): `string` 
+- Blip Options: `table`
+  - label?: `string`
+    - The name of the blip displayed in the map (default: Blip)
+  - coords: `vector3[]`
+    - Coords of the blip
+  - display?: `number`
+    - Settings for blip visibility (default: 2)
+      - 0 = Not Displays
+      - 2 = Map&Minimap (Selectable on Map)
+      - 3 = Only Map
+      - 5 = Only Minimap 
+      - 8 = Map&Minimap (Not selectable on Map)
+  - sprite?: `number` 
+    - Icon of the blip, for codes see https://docs.fivem.net/docs/game-references/blips/#blips
+  - color?: `number`
+    - Color of the blip, for codes see https://docs.fivem.net/docs/game-references/blips/#blip-colors
+  - alpha?: `number`
+    - Transparency of the blip (0 = transparent, 255 = opaque).
+  - scale?: `number`
+    - Scale (size) of the blip on the map (e.g. 0.8 = slightly smaller).
+
+## DeleteBlip
+
+Deletes a previously created blip
+
+```lua title="Example"
+exports.mnr_mapsutility:DeleteBlip("blipID")
+```
+
+blipID (Unique): `string`

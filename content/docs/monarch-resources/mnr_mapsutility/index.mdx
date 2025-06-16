@@ -1,0 +1,60 @@
+---
+title: Monarch Maps Utility
+description: Resource useful for manage MLOs features
+---
+
+Monarch Maps Utility is an optimized and simple script for MLOs management with the following functions:
+- Blips
+- Elevators
+- Sit Anywhere
+- IPL and EntitySets
+
+<GithubInfo 
+  owner="Monarch-Development" 
+  repo="mnr_mapsutility" 
+  className="border border-purple-600 rounded-md p-4 bg-gradient-to-r from-purple-600 to-black no-underline"
+/>
+
+## Innovations
+- [Blips] New and optimized one-time way to load blips
+- [Blips] Export to create static blips
+- [Elevators] New and optimized one-time way to load elevators
+- [Elevators] Multiple zones for each floor without make multiple elevators configs
+- [Elevators] Possibility to lock floors with items or jobs or both
+- [SitAnywhere] Coords conversion with prop heading for simple offsets and support more than one seat
+- [SitAnywhere] Multi-seat chairs and benches
+- [SitAnywhere] Network system that makes possible for other players to recognize if a seat is occupied
+- [IPL & EntitySets] New system for dynamic loading of IPL based on zones
+- [IPL & EntitySets] Possibility to load/unload EntitySets of maps with a command (only group.admin)
+
+## Performance
+
+| **SITUATION**                | **RESMON** |
+| ---------------------------- | ---------- |
+| Idle (Average consumption)   | 0.00 ms    |
+| Max (Using elevator menu)    | 0.02 ms    |
+
+<Callout title="ATTENTION" type="warn">
+  These values are purely indicative, performance tested with:
+  - CPU: AMD Ryzen 5 5600X
+  - MOBO: Asus Rog Strix B550 E-Gaming
+  - RAM: Crucial Ballistix 2x8GB CL16 3600MHz
+  - SSD: Samsung 970 EVO+ 1TB
+  - VGA: Sapphire AMD RX6600XT Nitro+
+</Callout>
+
+## Fivem Curiosities
+
+### Unique named blips [LIMIT]
+
+<Callout title="PROBLEM" type="warn">
+  FiveM has a limit for the map side menu, in fact the blips with unique name cannot exceed 99 slots, beyond that limit the blips will start to function badly (the menu will not be displayed correctly or the blips will not be selectable as expected)
+</Callout>
+
+<Callout title="SOLUTION" type="info">
+  To avoid incurring the limit as well as not exceeding 99 blips with different names it is advisable to collect as many blips as possible under a single general name that will collect them all in a single name slot
+
+  Example:
+  - Paleto Store ---> Store
+  - Sandy Store ---> Store
+</Callout>

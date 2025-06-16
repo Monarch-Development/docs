@@ -1,0 +1,140 @@
+---
+title: Configuration
+icon: Settings
+---
+
+## Blips
+
+```lua title="config/blips.lua"
+  ["fib"] = {
+      label = "FIB Headquarter",
+      coords = vec3(136.08, -761.74, 46.00),
+      display = 2,
+      sprite = 60,
+      color = 40,
+      alpha = 255,
+      scale = 0.8,
+  },
+```
+
+- Blip ID (Unique): `string` 
+- Blip Options: `table`
+  - label?: `string`
+    - The name of the blip displayed in the map (default: Blip)
+  - coords: `vector3[]`
+    - Coords of the blip
+  - display?: `number`
+    - Settings for blip visibility (default: 2)
+      - 0 = Not Displays
+      - 2 = Map&Minimap (Selectable on Map)
+      - 3 = Only Map
+      - 5 = Only Minimap 
+      - 8 = Map&Minimap (Not selectable on Map)
+  - sprite?: `number` 
+    - Icon of the blip, for codes see https://docs.fivem.net/docs/game-references/blips/#blips
+  - color?: `number`
+    - Color of the blip, for codes see https://docs.fivem.net/docs/game-references/blips/#blip-colors
+  - alpha?: `number`
+    - Transparency of the blip (0 = transparent, 255 = opaque).
+  - scale?: `number`
+    - Scale (size) of the blip on the map (e.g. 0.8 = slightly smaller).
+
+## Elevators
+
+```lua title="config/elevators.lua"
+  ["fib"] = {
+      label = "FIB Headquarter",
+      debug = false,
+      floors = {
+          [1] = {
+              title = "Ground Floor",
+              description = "Entrance and Desk",
+              zones = {
+                  [1] = {coords = vec4(136.0807, -761.7469, 46.00, 160.00), size = vec3(2.0, 2.0, 2.5)}
+              },
+              locked = false,
+              item = false,
+              jobs = false,
+          },
+          [2] = {
+              title = "Floor 47",
+              description = "Legal Affairs",
+              zones = {
+                  [1] = {coords = vec4(136.0939, -761.8068, 234.50, 160.00), size = vec3(2.0, 2.0, 2.5)}
+              },
+              locked = false,
+              item = false,
+              jobs = false,
+          },
+          [3] = {
+              title = "Floor 49",
+              description = "Communications",
+              zones = {
+                  [1] = {coords = vec4(136.0755, -761.7881, 242.50, 160.00), size = vec3(2.0, 2.0, 2.5)}
+              },
+              locked = false,
+              item = false,
+              jobs = false,
+          }
+      },
+  },
+```
+
+### Elevator
+
+<TypeTable
+  type={{
+    ElevatorID: { description: 'Code of the elevator (The code is UNIQUE, avoid using duplicated names)', type: 'string' },
+    ElevatorOptions: { description: 'Options of the elevator, see ElevatorOptions below', type: 'table' },
+  }}
+/>
+
+### ElevatorOptions
+
+<TypeTable
+  type={{
+    label: { description: 'Name of the elevator (Displayed on menu title)', type: 'string' },
+    debug: { description: 'For enable debug of elevator zones', type: 'boolean', default: false },
+    floors: { description: 'Floors of the elevator, see floors below', type: 'table' },
+  }}
+/>
+
+### floors
+
+<TypeTable
+  type={{
+    FloorID: { description: 'Index of the floor (The code is UNIQUE, avoid using duplicated index and use 1 and 1+ values)', type: 'string' },
+    FloorOptions: { description: 'Options of the floor, see FloorOptions below', type: 'table' },
+  }}
+/>
+
+### FloorOptions
+
+<TypeTable
+  type={{
+    title: { description: 'Name of the floor (Displayed on menu)', type: 'string' },
+    description?: { description: 'Description of floor (Displayed on menu)', type: 'string' },
+    zones: { description: 'Zones of the floor, see zones below', type: 'table' },
+    locked?: { description: 'If floor is locked by job or item, if false item and jobs are ignored', type: 'boolean', default: false },
+    item?: { description: 'Name of the item in inventory to have for access', type: 'string' },
+    jobs?: { description: 'Name of the jobs that can access the floor', type: 'string' },
+  }}
+/>
+
+### zones
+
+<TypeTable
+  type={{
+    zoneId: { description: 'ID of the Zone (Displayed on menu)', type: 'string' },
+    zoneData: { description: 'Data of the zone, see zoneData below', type: 'table' },
+  }}
+/>
+
+## zoneData
+
+<TypeTable
+  type={{
+    coords: { description: 'The coordinates of the center of the box zone', type: 'vector3[]' },
+    size: { description: 'The extension of various axis of the box zone', type: 'vector3[]' },
+  }}
+/>

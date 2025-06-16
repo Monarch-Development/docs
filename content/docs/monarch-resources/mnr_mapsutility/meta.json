@@ -1,0 +1,6 @@
+{
+    "title": "mnr_mapsutility",
+    "icon": "HousePlus",
+    "pages": ["installation", "configuration", "functions"],
+    "defaultOpen": false
+}
