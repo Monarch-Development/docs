@@ -1,12 +1,14 @@
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import type { MDXComponents } from 'mdx/types';
 import { GithubInfo } from 'fumadocs-ui/components/github-info';
+import { TypeTable } from 'fumadocs-ui/components/type-table';
 
-// use this function to get MDX components, you will need it for rendering MDX
+// MDXComponents
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
     ...components,
     GithubInfo,
+    TypeTable,
   };
 }
