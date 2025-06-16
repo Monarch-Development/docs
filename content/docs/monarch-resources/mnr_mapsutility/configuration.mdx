@@ -80,61 +80,114 @@ icon: Settings
   },
 ```
 
+const elevatorType = {
+  ElevatorID: {
+    description: 'Code of the elevator (The code is UNIQUE, avoid using duplicated names)',
+    type: 'string',
+  },
+  ElevatorOptions: {
+    description: 'Options of the elevator, see ElevatorOptions below',
+    type: 'table',
+  },
+};
+
+const elevatorOptionsType = {
+  label: {
+    description: 'Name of the elevator (Displayed on menu title)',
+    type: 'string',
+  },
+  debug: {
+    description: 'For enable debug of elevator zones',
+    type: 'boolean',
+    default: false,
+  },
+  floors: {
+    description: 'Floors of the elevator, see floors below',
+    type: 'table',
+  },
+};
+
+const floorsType = {
+  FloorID: {
+    description: 'Index of the floor (The code is UNIQUE, avoid using duplicated index and use 1 and 1+ values)',
+    type: 'string',
+  },
+  FloorOptions: {
+    description: 'Options of the floor, see FloorOptions below',
+    type: 'table',
+  },
+};
+
+const floorOptionsType = {
+  title: {
+    description: 'Name of the floor (Displayed on menu)',
+    type: 'string',
+  },
+  description: {
+    description: 'Description of floor (Displayed on menu)',
+    type: 'string',
+  },
+  zones: {
+    description: 'Zones of the floor, see zones below',
+    type: 'table',
+  },
+  locked: {
+    description: 'If floor is locked by job or item, if false item and jobs are ignored',
+    type: 'boolean',
+    default: false,
+  },
+  item: {
+    description: 'Name of the item in inventory to have for access',
+    type: 'string',
+  },
+  jobs: {
+    description: 'Name of the jobs that can access the floor',
+    type: 'string',
+  },
+};
+
+const zonesType = {
+  zoneId: {
+    description: 'ID of the Zone (Displayed on menu)',
+    type: 'string',
+  },
+  zoneData: {
+    description: 'Data of the zone, see zoneData below',
+    type: 'table',
+  },
+};
+
+const zoneDataType = {
+  coords: {
+    description: 'The coordinates of the center of the box zone',
+    type: 'vector3[]',
+  },
+  size: {
+    description: 'The extension of various axis of the box zone',
+    type: 'vector3[]',
+  },
+};
+
 ### Elevator
 
-<TypeTable
-  type={{
-    ElevatorID: { description: 'Code of the elevator (The code is UNIQUE, avoid using duplicated names)', type: 'string' },
-    ElevatorOptions: { description: 'Options of the elevator, see ElevatorOptions below', type: 'table' },
-  }}
-/>
+<TypeTable type={ elevatorType } />
 
 ### ElevatorOptions
 
-<TypeTable
-  type={{
-    label: { description: 'Name of the elevator (Displayed on menu title)', type: 'string' },
-    debug: { description: 'For enable debug of elevator zones', type: 'boolean', default: false },
-    floors: { description: 'Floors of the elevator, see floors below', type: 'table' },
-  }}
-/>
+<TypeTable type = { elevatorOptionsType } />
 
 ### floors
 
-<TypeTable
-  type={{
-    FloorID: { description: 'Index of the floor (The code is UNIQUE, avoid using duplicated index and use 1 and 1+ values)', type: 'string' },
-    FloorOptions: { description: 'Options of the floor, see FloorOptions below', type: 'table' },
-  }}
-/>
+<TypeTable type = { floorsType } />
 
 ### FloorOptions
 
-<TypeTable
-  type={{
-    title: { description: 'Name of the floor (Displayed on menu)', type: 'string' },
-    description?: { description: 'Description of floor (Displayed on menu)', type: 'string' },
-    zones: { description: 'Zones of the floor, see zones below', type: 'table' },
-    locked?: { description: 'If floor is locked by job or item, if false item and jobs are ignored', type: 'boolean', default: false },
-    item?: { description: 'Name of the item in inventory to have for access', type: 'string' },
-    jobs?: { description: 'Name of the jobs that can access the floor', type: 'string' },
-  }}
-/>
+<TypeTable type = { floorOptionsType } />
 
 ### zones
 
-<TypeTable
-  type={{
-    zoneId: { description: 'ID of the Zone (Displayed on menu)', type: 'string' },
-    zoneData: { description: 'Data of the zone, see zoneData below', type: 'table' },
-  }}
-/>
+<TypeTable type = { zonesType } />
 
 ### zoneData
 
-<TypeTable
-  type={{
-    coords: { description: 'The coordinates of the center of the box zone', type: 'vector3[]' },
-    size: { description: 'The extension of various axis of the box zone', type: 'vector3[]' },
-  }}
-/>
+<TypeTable type = { zoneDataType } />
