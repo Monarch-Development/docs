@@ -3,10 +3,8 @@ title: Configuration
 icon: Settings
 ---
 
-export { withArticle as default } from 'fumadocs-ui/page';
-
 ## Blips
-More actions
+
 ```lua title="config/blips.lua"
   ["fib"] = {
       label = "FIB Headquarter",
@@ -82,63 +80,54 @@ More actions
   },
 ```
 
-import { TypeTable } from 'fumadocs-ui/components/type-table';
-
 ### Elevator
 
-<TypeTable
-  type={{
-    ElevatorID: { description: 'Code of the elevator (The code is UNIQUE, avoid using duplicated names)', type: 'string' },
-    ElevatorOptions: { description: 'Options of the elevator, see ElevatorOptions below', type: 'table' },
-  }}
-/>
+- ElevatorID: `string`
+  - Code of the elevator (The code is UNIQUE, avoid using duplicated names)
+- ElevatorOptions: `table`
+  - Options of the elevator, see ElevatorOptions below
 
 ### ElevatorOptions
 
-<TypeTable
-  type={{
-    label: { description: 'Name of the elevator (Displayed on menu title)', type: 'string' },
-    debug: { description: 'For enable debug of elevator zones', type: 'boolean', default: false },
-    floors: { description: 'Floors of the elevator, see floors below', type: 'table' },
-  }}
-/>
+- label: `string`
+  - Name of the elevator (Displayed on menu title)
+- debug: `boolean`
+  - For enable debug of elevator zones
+- floors: `table`
+  - Floors of the elevator, see floors below
 
 ### floors
 
-<TypeTable
-  type={{
-    FloorID: { description: 'Index of the floor (The code is UNIQUE, avoid using duplicated index and use 1 and 1+ values)', type: 'string' },
-    FloorOptions: { description: 'Options of the floor, see FloorOptions below', type: 'table' },
-  }}
-/>
+- FloorID: `number`
+  - Index of the floor (The code is UNIQUE, avoid using duplicated index and use 1 and 1+ values)
+- FloorOptions: `table`
+  - Options of the floor, see FloorOptions below
 
 ### FloorOptions
 
-<TypeTable
-  type={{
-    title: { description: 'Name of the floor (Displayed on menu)', type: 'string' },
-    description?: { description: 'Description of floor (Displayed on menu)', type: 'string' },
-    zones: { description: 'Zones of the floor, see zones below', type: 'table' },
-    locked?: { description: 'If floor is locked by job or item, if false item and jobs are ignored', type: 'boolean', default: false },
-    item?: { description: 'Name of the item in inventory to have for access', type: 'string' },
-    jobs?: { description: 'Name of the jobs that can access the floor', type: 'string' },
-  }}
-/>
+- title: `string`
+  - Name of the floor (Displayed on menu)
+- description?: `string`
+  - Description of floor (Displayed on menu)
+- zones: `table`
+  - Zones of the floor, see zones below
+- locked?: `boolean`
+  - If floor is locked by job or item, if false item and jobs are ignored
+- item?: `string` or `table`
+  - Name of the item in inventory to have for access
+- jobs?: `string` or `table`
+  - Name of the jobs that can access the floor
 
 ### zones
 
-<TypeTable
-  type={{
-    zoneId: { description: 'ID of the Zone (Displayed on menu)', type: 'string' },
-    zoneData: { description: 'Data of the zone, see zoneData below', type: 'table' },
-  }}
-/>
+- zoneId: `number`
+  - ID of the Zone (Displayed on menu)
+- zoneData: `table`
+  - Data of the zone, see zoneData below
 
 ### zoneData
 
-<TypeTable
-  type={{
-    coords: { description: 'The coordinates of the center of the box zone', type: 'vector3[]' },
-    size: { description: 'The extension of various axis of the box zone', type: 'vector3[]' },
-  }}
-/>
+- coords: `vector3[]`
+  - The coordinates of the center of the box zone
+- size: `vector3[]`
+  - The extension of various axis of the box zone

@@ -10,5 +10,3 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     GithubInfo,
   };
 }
-
-export const useMDXComponents = getMDXComponents;
