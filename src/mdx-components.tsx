@@ -6,7 +6,7 @@ import { TypeTable } from 'fumadocs-ui/components/type-table';
 // MDXComponents
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
-    ...defaultMdxComponents,
+    ...defaultComponents,
     ...components,
     GithubInfo,
     TypeTable,
