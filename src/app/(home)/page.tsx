@@ -9,8 +9,8 @@ const socialLinks = [
 ];
 
 const teamMembers = [
-  { name: 'IlMelons', role: 'Owner', avatar: 'ilmelons.png' },
-  { name: 'Rico', role: 'Owner', avatar: 'rico.gif' },
+  { name: 'IlMelons', role: 'Owner', avatar: 'https://img.monarch-docs.ricodev.it/Melons.webm' },
+  { name: 'Rico', role: 'Owner', avatar: 'https://img.monarch-docs.ricodev.it/Rico.webm' },
   { name: 'Arctos', role: 'Team Manager', avatar: 'arctos.png' },
   { name: 'enty', role: 'Developer', avatar: 'enty.png' },
   { name: 'Mustache_dom', role: 'Developer', avatar: 'mustache_dom.png' },
