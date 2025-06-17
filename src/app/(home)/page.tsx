@@ -11,11 +11,11 @@ const socialLinks = [
 const teamMembers = [
   { name: 'IlMelons', role: 'Owner', avatar: 'https://img.monarch-docs.ricodev.it/Melons.webm' },
   { name: 'Rico', role: 'Owner', avatar: 'https://img.monarch-docs.ricodev.it/Rico.webm' },
-  { name: 'Arctos', role: 'Team Manager', avatar: 'arctos.png' },
-  { name: 'enty', role: 'Developer', avatar: 'enty.png' },
-  { name: 'Mustache_dom', role: 'Developer', avatar: 'mustache_dom.png' },
-  { name: 'Knoblauchbrot', role: 'Developer', avatar: 'knoblauchbrot.png' },
-  { name: 'MadCap', role: 'Developer', avatar: 'madcap.png' }
+  { name: 'Arctos', role: 'Team Manager', avatar: 'https://img.monarch-docs.ricodev.it/arctos.webm' },
+  { name: 'enty', role: 'Developer', avatar: 'https://img.monarch-docs.ricodev.it/enty.webm' },
+  { name: 'Mustache_dom', role: 'Developer', avatar: 'https://img.monarch-docs.ricodev.it/mustache_dom.webm' },
+  { name: 'MadCap', role: 'Developer', avatar: 'https://img.monarch-docs.ricodev.it/madcap.webm' },
+  { name: 'BeansFL', role: 'Developer', avatar: 'https://img.monarch-docs.ricodev.it/BeansFL.webm' }
 ];
 
 export default function HomePage() {
@@ -102,33 +102,41 @@ export default function HomePage() {
           </button>
           <div className="overflow-hidden w-full">
             <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${current * 100}%)` }}>
-              {teamMembers.map((member) => (
-                <div key={`${member.name}-${member.role}`} className="flex-shrink-0 w-full flex flex-col items-center px-4" style={{ minWidth: "100%" }}>
-                  <div className="w-28 h-28 rounded-full overflow-hidden mb-4 bg-white dark:bg-black shadow-lg border-4 border-purple-200 dark:border-purple-800 transition-all duration-500">
-                    {member.avatar.endsWith('.webm') ? (
-                      <video
-                        src={member.avatar}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="object-cover w-full h-full"
-                      />
-                    ) : (
-                      <img
-                        src={member.avatar.startsWith('http') ? member.avatar : `/img/team/${member.avatar}`}
-                        alt={`${member.name}'s avatar`}
-                        width={112}
-                        height={112}
-                        className="object-cover w-full h-full"
-                        loading="lazy"
-                      />
-                    )}
+              {teamMembers.map((member) => {
+                const isWebm = member.avatar.endsWith('.webm');
+                const src = isWebm
+                  ? `${member.avatar}?v=${Date.now()}`
+                  : member.avatar.startsWith('http')
+                    ? member.avatar
+                    : `/img/team/${member.avatar}`;
+                return (
+                  <div key={`${member.name}-${member.role}`} className="flex-shrink-0 w-full flex flex-col items-center px-4" style={{ minWidth: "100%" }}>
+                    <div className="w-28 h-28 rounded-full overflow-hidden mb-4 bg-white dark:bg-black shadow-lg border-4 border-purple-200 dark:border-purple-800 transition-all duration-500">
+                      {isWebm ? (
+                        <video
+                          src={src}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="object-cover w-full h-full"
+                        />
+                      ) : (
+                        <img
+                          src={src}
+                          alt={`${member.name}'s avatar`}
+                          width={112}
+                          height={112}
+                          className="object-cover w-full h-full"
+                          loading="lazy"
+                        />
+                      )}
+                    </div>
+                    <h4 className="font-semibold text-xl text-purple-700 dark:text-purple-200">{member.name}</h4>
+                    <p className="text-black/70 dark:text-white/70">{member.role}</p>
                   </div>
-                  <h4 className="font-semibold text-xl text-purple-700 dark:text-purple-200">{member.name}</h4>
-                  <p className="text-black/70 dark:text-white/70">{member.role}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
           <button aria-label="Next" onClick={next} className="absolute right-0 z-10 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 transition disabled:opacity-50" style={{ top: "50%", transform: "translateY(-50%)" }}>
@@ -137,7 +145,14 @@ export default function HomePage() {
         </div>
 
         <div className="flex justify-center gap-2 mt-6">
-          {teamMembers.map((_, idx) => (<button key={idx} onClick={() => setCurrent(idx)} className={`w-3 h-3 rounded-full transition-all duration-300 ${current === idx ? "bg-purple-500 dark:bg-purple-300 scale-125" : "bg-purple-200 dark:bg-purple-800"}`} aria-label={`Go to member ${idx + 1}`}/>))}
+          {teamMembers.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrent(idx)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${current === idx ? "bg-purple-500 dark:bg-purple-300 scale-125" : "bg-purple-200 dark:bg-purple-800"}`}
+              aria-label={`Go to member ${idx + 1}`}
+            />
+          ))}
         </div>
       </section>
 
