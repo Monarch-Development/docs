@@ -97,49 +97,50 @@ export default function HomePage() {
           <p className="text-black/70 dark:text-white/70">Extraordinary people behind our success</p>
         </div>
         <div className="relative max-w-xl mx-auto flex items-center">
-          <button aria-label="Previous" onClick={prev} className="absolute left-0 z-10 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 transition disabled:opacity-50" style={{ top: "50%", transform: "translateY(-50%)" }}>
+          <button aria-label="Previous" onClick={prev} className="absolute left-0 z-10 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 transition" style={{ top: "50%", transform: "translateY(-50%)" }}>
             <FaChevronLeft className="text-purple-500 dark:text-purple-300" size={28} />
           </button>
-          <div className="overflow-hidden w-full">
-            <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${current * 100}%)` }}>
-              {teamMembers.map((member) => {
-                const isWebm = member.avatar.endsWith('.webm');
-                const src = isWebm
-                  ? `${member.avatar}?v=${Date.now()}`
-                  : member.avatar.startsWith('http')
-                    ? member.avatar
-                    : `/img/team/${member.avatar}`;
-                return (
-                  <div key={`${member.name}-${member.role}`} className="flex-shrink-0 w-full flex flex-col items-center px-4" style={{ minWidth: "100%" }}>
-                    <div className="w-28 h-28 rounded-full overflow-hidden mb-4 bg-white dark:bg-black shadow-lg border-4 border-purple-200 dark:border-purple-800 transition-all duration-500">
-                      {isWebm ? (
+          <div className="w-full relative h-64 flex justify-center items-center">
+            {teamMembers.map((member, index) => {
+              const isActive = index === current;
+              return (
+                <div
+                  key={`${member.name}-${member.role}`}
+                  className={`absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center transition-opacity duration-700 ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                >
+                  <div className="w-28 h-28 rounded-full overflow-hidden mb-4 bg-white dark:bg-black shadow-lg border-4 border-purple-200 dark:border-purple-800">
+                    {loadAvatars ? (
+                      member.avatar.endsWith('.webm') ? (
                         <video
-                          src={src}
+                          src={member.avatar}
                           autoPlay
                           loop
                           muted
                           playsInline
+                          preload="auto"
                           className="object-cover w-full h-full"
                         />
                       ) : (
                         <img
-                          src={src}
+                          src={member.avatar.startsWith('http') ? member.avatar : `/img/team/${member.avatar}`}
                           alt={`${member.name}'s avatar`}
                           width={112}
                           height={112}
                           className="object-cover w-full h-full"
-                          loading="lazy"
+                          loading="eager"
                         />
-                      )}
-                    </div>
-                    <h4 className="font-semibold text-xl text-purple-700 dark:text-purple-200">{member.name}</h4>
-                    <p className="text-black/70 dark:text-white/70">{member.role}</p>
+                      )
+                    ) : (
+                      <div className="w-full h-full bg-purple-100 dark:bg-purple-900 animate-pulse" />
+                    )}
                   </div>
-                );
-              })}
-            </div>
+                  <h4 className="font-semibold text-xl text-purple-700 dark:text-purple-200">{member.name}</h4>
+                  <p className="text-black/70 dark:text-white/70">{member.role}</p>
+                </div>
+              );
+            })}
           </div>
-          <button aria-label="Next" onClick={next} className="absolute right-0 z-10 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 transition disabled:opacity-50" style={{ top: "50%", transform: "translateY(-50%)" }}>
+          <button aria-label="Next" onClick={next} className="absolute right-0 z-10 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 transition" style={{ top: "50%", transform: "translateY(-50%)" }}>
             <FaChevronRight className="text-purple-500 dark:text-purple-300" size={28} />
           </button>
         </div>
