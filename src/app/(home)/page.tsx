@@ -105,7 +105,25 @@ export default function HomePage() {
               {teamMembers.map((member) => (
                 <div key={`${member.name}-${member.role}`} className="flex-shrink-0 w-full flex flex-col items-center px-4" style={{ minWidth: "100%" }}>
                   <div className="w-28 h-28 rounded-full overflow-hidden mb-4 bg-white dark:bg-black shadow-lg border-4 border-purple-200 dark:border-purple-800 transition-all duration-500">
-                    <img src={`/img/team/${member.avatar}`} alt={`${member.name}'s avatar`} width={112} height={112} className="object-cover w-full h-full" loading="lazy"/>
+                    {member.avatar.endsWith('.webm') ? (
+                      <video
+                        src={member.avatar}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="object-cover w-full h-full"
+                      />
+                    ) : (
+                      <img
+                        src={member.avatar.startsWith('http') ? member.avatar : `/img/team/${member.avatar}`}
+                        alt={`${member.name}'s avatar`}
+                        width={112}
+                        height={112}
+                        className="object-cover w-full h-full"
+                        loading="lazy"
+                      />
+                    )}
                   </div>
                   <h4 className="font-semibold text-xl text-purple-700 dark:text-purple-200">{member.name}</h4>
                   <p className="text-black/70 dark:text-white/70">{member.role}</p>
