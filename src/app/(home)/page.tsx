@@ -21,6 +21,11 @@ const teamMembers = [
 export default function HomePage() {
   const [current, setCurrent] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [loadAvatars, setLoadAvatars] = useState(false);
+
+  useEffect(() => {
+    setLoadAvatars(true);
+  }, []);
 
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
@@ -60,28 +65,23 @@ export default function HomePage() {
 
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            {
-              title: 'ABOUT US',
-              content: 'Monarch Development is a group of selected developers in the FiveM community who follow the same goal',
-              icon: <FaUsers className="text-purple-400 text-3xl mb-2" />,
-            },
-            {
-              title: 'OUR GOAL',
-              content: 'Reduce developers in the community who exploit their skills to make money with little effort',
-              icon: <FaBullseye className="text-purple-500 text-3xl mb-2" />,
-            },
-            {
-              title: 'OUR STANDARDS',
-              content: 'Simple and functional scripts with features focused on ease of use and free to user suggestions',
-              icon: <FaCogs className="text-purple-600 text-3xl mb-2" />,
-            },
-            {
-              title: 'OUR DREAM',
-              content: 'Create a framework and a collection of scripts with partners selected for passion and skill and not to gain economic profit from them',
-              icon: <FaStar className="text-purple-700 text-3xl mb-2" />,
-            },
-          ].map((card, i) => (
+          {[{
+            title: 'ABOUT US',
+            content: 'Monarch Development is a group of selected developers in the FiveM community who follow the same goal',
+            icon: <FaUsers className="text-purple-400 text-3xl mb-2" />,
+          }, {
+            title: 'OUR GOAL',
+            content: 'Reduce developers in the community who exploit their skills to make money with little effort',
+            icon: <FaBullseye className="text-purple-500 text-3xl mb-2" />,
+          }, {
+            title: 'OUR STANDARDS',
+            content: 'Simple and functional scripts with features focused on ease of use and free to user suggestions',
+            icon: <FaCogs className="text-purple-600 text-3xl mb-2" />,
+          }, {
+            title: 'OUR DREAM',
+            content: 'Create a framework and a collection of scripts with partners selected for passion and skill and not to gain economic profit from them',
+            icon: <FaStar className="text-purple-700 text-3xl mb-2" />,
+          }].map((card, i) => (
             <div key={i} className="bg-white/80 dark:bg-black/60 backdrop-blur-lg rounded-2xl p-8 shadow-lg hover:scale-105 hover:shadow-2xl transition-all flex flex-col items-center text-center border border-purple-200 dark:border-purple-900">
               {card.icon}
               <h3 className="text-2xl font-bold mb-2 text-purple-700 dark:text-purple-200">{card.title}</h3>
@@ -96,6 +96,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold">Our Team</h2>
           <p className="text-black/70 dark:text-white/70">Extraordinary people behind our success</p>
         </div>
+
         <div className="relative max-w-xl mx-auto flex items-center">
           <button aria-label="Previous" onClick={prev} className="absolute left-0 z-10 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow hover:scale-110 transition" style={{ top: "50%", transform: "translateY(-50%)" }}>
             <FaChevronLeft className="text-purple-500 dark:text-purple-300" size={28} />
