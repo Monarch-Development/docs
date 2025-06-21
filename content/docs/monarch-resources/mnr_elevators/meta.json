@@ -1,0 +1,6 @@
+{
+    "title": "mnr_elevators",
+    "icon": "Columns2",
+    "pages": ["installation", "configuration"],
+    "defaultOpen": false
+}
