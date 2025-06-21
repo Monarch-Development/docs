@@ -57,7 +57,7 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <Link href="/docs" className="mt-4 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 dark:from-purple-800 dark:to-purple-600 px-8 py-3 font-semibold text-white shadow-lg hover:scale-105 hover:bg-purple-900 transition">
+          <Link href="/docs/monarch-reources" className="mt-4 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 dark:from-purple-800 dark:to-purple-600 px-8 py-3 font-semibold text-white shadow-lg hover:scale-105 hover:bg-purple-900 transition">
             Get Started
           </Link>
         </div>
