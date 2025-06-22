@@ -1,0 +1,6 @@
+{
+    "title": "mnr_ipl",
+    "icon": "HousePlus",
+    "pages": ["installation", "configuration"],
+    "defaultOpen": false
+}

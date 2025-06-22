@@ -15,7 +15,7 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
   Extract the .zip file
   </Step>
   <Step>
-  Make sure the resource name is `mnr_mapsutility` to make it work properly
+  Make sure the resource name is `mnr_ipl` to make it work properly
   </Step>
   <Step>
   Make sure you install all the listed below dependencies and run them following the order
@@ -26,12 +26,5 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 ```mdx title="server.cfg"
 ensure ox_lib
-ensure (FRAMEWORK)
-ensure (TARGET)
-ensure (INVENTORY)
-ensure mnr_mapsutility
+ensure mnr_ipl
 ```
-
-<Callout title="WARNING" type="warn">
-  The `(FRAMEWORK)`, `(TARGET)` and `(INVENTORY)` parts are just indicative, replace them with your framework etc.
-</Callout>
