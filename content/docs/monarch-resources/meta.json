@@ -1,5 +1,5 @@
 {
     "title": "Monarch Resources",
-    "pages": ["presets", "mnr_blips", "mnr_cayo", "mnr_consumables", "mnr_elevators", "mnr_ipl", "mnr_postals", "mnr_sitanywhere"],
+    "pages": ["presets", "mnr_blips", "mnr_cayo", "mnr_consumables", "mnr_elevators", "mnr_fuel", "mnr_ipl", "mnr_postals", "mnr_sitanywhere"],
     "defaultOpen": true
 }

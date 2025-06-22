@@ -1,0 +1,6 @@
+{
+    "title": "mnr_fuel",
+    "icon": "Fuel",
+    "pages": ["installation", "configuration"],
+    "defaultOpen": false
+}
