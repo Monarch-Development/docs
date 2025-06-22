@@ -1,0 +1,6 @@
+{
+    "title": "mnr_dispatch",
+    "icon": "Siren",
+    "pages": ["installation"],
+    "defaultOpen": false
+}

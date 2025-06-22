@@ -1,0 +1,6 @@
+{
+    "title": "mnr_dispatch",
+    "icon": "Box",
+    "pages": ["installation"],
+    "defaultOpen": false
+}

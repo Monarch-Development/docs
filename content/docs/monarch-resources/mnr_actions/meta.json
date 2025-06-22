@@ -1,0 +1,6 @@
+{
+    "title": "mnr_actions",
+    "icon": "Users",
+    "pages": ["installation"],
+    "defaultOpen": false
+}
