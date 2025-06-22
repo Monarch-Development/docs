@@ -1,0 +1,37 @@
+---
+title: Configuration
+icon: Settings
+---
+
+## Seats Configuration
+
+```lua title="config/config.lua"
+    [`examplemodelname`] = {
+		maxSeats = 3,
+		anim = { scenario = "PROP_HUMAN_SEAT_BENCH" },
+		seats = {
+			[1] = { offset = vec4(0.0, -0.05, 0.5, 180.0) },
+			[2] = { offset = vec4(-0.7, -0.05, 0.5, 180.0) },
+			[3] = { offset = vec4(0.7, -0.05, 0.5, 180.0) },
+		},
+	},
+```
+
+- ModelName: `number`
+  - Name of the model (the apostrophes are not for string but to convert the model in hash), or hash code of the prop
+- ModelOptions: `table`
+  - Options of the prop
+    - maxSeats: `number`
+      - Number of maximum seats available for the prop
+    - anim: `table`
+      - Sit animations for the prop
+        - scenario: `string`
+          - Scenario animation for the prop for the list see https://pastebin.com/6mrYTdQv
+    - seats: `table`
+      - Table containing the seats and their offsets
+        - SeatID: `number`
+          - ID of the seat
+        - SeatOptions: `table`
+          - Options of the seat
+            - offset: `vector4[]`
+              - Offset Player/Prop of the seat

@@ -1,0 +1,6 @@
+{
+    "title": "mnr_sitanywhere",
+    "icon": "Armchair",
+    "pages": ["installation", "configuration"],
+    "defaultOpen": false
+}
