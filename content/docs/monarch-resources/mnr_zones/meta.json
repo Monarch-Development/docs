@@ -1,6 +1,6 @@
 {
-    "title": "mnr_dispatch",
+    "title": "mnr_zones",
     "icon": "Box",
-    "pages": ["installation"],
+    "pages": ["installation", "configuration"],
     "defaultOpen": false
 }
