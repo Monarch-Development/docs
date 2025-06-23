@@ -1,0 +1,109 @@
+---
+title: Configuration
+icon: Settings
+---
+
+## Polyzone Configuration
+
+```lua title="config/config.lua"
+    ["examplepolyzone"] = {
+        zoneShape = "poly",
+        points = {
+            vec3(312.4037, -840.8610, 29.1259),
+            vec3(322.9013, -853.7343, 29.3473),
+            vec3(304.7913, -868.7913, 29.1405),
+            vec3(262.9091, -867.4285, 29.2486),
+            vec3(274.2971, -839.1588, 29.2185),
+        },
+        height = 20.0,
+        debug = false,
+        speedZone = true,
+        speedLimit = 10.0,
+        safeZone = true,
+    },
+```
+
+- ZoneName: `string`
+  - Name of the zone
+- ZoneOptions: `table`
+  - Options of the zone
+    - zoneShape: `string`
+      - Available shapes: `"poly"`, `"box"` and `"sphere"`
+    - points: `table`
+      - Table with various points of the zone
+    - height: `number`
+      - number that will indicate the height of the area starting from the z coordinates of the points (the third value in vec3)
+    - debug?: `boolean`
+      - For activate the debug of the zone
+    - speedZone?: `boolean`
+      - For activate the speed limitations in the zone, if `false` ignores speedLimit
+    - speedLimit?: `number`
+      - Speed Limit (meters per second), for not apply limits use `0.0`
+    - safeZone?: `boolean`
+      - For activate the safezone effect, players can't be killed into the zone
+
+## Boxzone Configuration
+
+```lua title="config/config.lua"
+    ["exampleboxzone"] = {
+        zoneShape = "box",
+        coords = vec4(169.8745, -819.3834, 31.1767, 246.1982),
+        size = vec3(10.0, 10.0, 10.0),
+        debug = false,
+        speedZone = true,
+        speedLimit = 10.0,
+        safeZone = true,
+    },
+```
+
+- ZoneName: `string`
+  - Name of the zone
+- ZoneOptions: `table`
+  - Options of the zone
+    - zoneShape: `string`
+      - Available shapes: `"poly"`, `"box"` and `"sphere"`
+    - coords: `vector4[]`
+      - Coordinates of the center of the zone, fourth value of vec4 is heading
+    - size: `vector3[]`
+      - Coordinates of zone extension (adds the values starting from zone center to extend the zone)
+    - debug?: `boolean`
+      - For activate the debug of the zone
+    - speedZone?: `boolean`
+      - For activate the speed limitations in the zone, if `false` ignores speedLimit
+    - speedLimit?: `number`
+      - Speed Limit (meters per second), for not apply limits use `0.0`
+    - safeZone?: `boolean`
+      - For activate the safezone effect, players can't be killed into the zone
+
+## Spherezone Configuration
+
+```lua title="config/config.lua"
+    ["examplesherezone"] = {
+        zoneShape = "sphere",
+        coords = vec3(30.1078, -768.8977, 31.5997),
+        radius = 50.0,
+        debug = false,
+        speedZone = true,
+        speedLimit = 10.0,
+        safeZone = true,
+    },
+```
+
+- ZoneName: `string`
+  - Name of the zone
+- ZoneOptions: `table`
+  - Options of the zone
+    - zoneShape: `string`
+      - Available shapes: `"poly"`, `"box"` and `"sphere"`
+    - coords: `vector3[]`
+      - Coordinates of the center of the zone
+    - radius: `number`
+      - Radius extension of the zone (adds the value starting from spherezone center to extend the zone)
+    - debug?: `boolean`
+      - For activate the debug of the zone
+    - speedZone?: `boolean`
+      - For activate the speed limitations in the zone, if `false` ignores speedLimit
+    - speedLimit?: `number`
+      - Speed Limit (meters per second), for not apply limits use `0.0`
+    - safeZone?: `boolean`
+      - For activate the safezone effect, players can't be killed into the zone 
