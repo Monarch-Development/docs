@@ -19,7 +19,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <Head> 
-        <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1b196864efd84fe78a1641e4b276faa0"}'></script><!-- End Cloudflare Web Analytics -->
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1b196864efd84fe78a1641e4b276faa0"}'></script>
       </Head>
       <body>
         <RootProvider
