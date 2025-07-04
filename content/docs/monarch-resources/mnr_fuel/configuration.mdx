@@ -3,4 +3,26 @@ title: Configuration
 icon: Settings
 ---
 
-## Coming Soon
+## Stations Configuration
+
+```lua title="config/config.lua"
+    ["EX01"] = {
+        coords = vec3(-319.4735, -1471.9589, 33.00),
+        radius = 30.00,
+        debug = false,
+        type = "fv",
+    },
+```
+
+- StationID: `string`
+  - Code of the station (The code is UNIQUE, avoid using duplicated names)
+- StationOptions: `table`
+  - Options of the station
+    - coords: `vector3[]`
+      - The coords of the center of the station zone
+    - radius: `number`
+      - The radius of the zone starting from center
+    - debug?: `boolean`
+      - Debug of the station zone
+    - type: `string`
+      - Type of the station (used for blips), available types: `"fv"` (Fuel Vehicles) or `"ev"` (Electric Vehicles)
