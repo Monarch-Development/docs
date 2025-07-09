@@ -1,0 +1,33 @@
+---
+title: Server
+icon: Server
+description: Here you'll find all server functions
+---
+
+## How to set/get fuel?
+With Statebags is possible to get the fuel level value also from server with a different process, let's retrieve the vehicle server entity
+
+```lua title="Retrieve Vehicle Entity"
+    local vehicle = NetToVeh(netId)
+```
+
+Then you need to set the statebag for get/set the fuel
+
+```lua title="Statebag Setup"
+    -- previous locals to get the vehicle entity
+    Entity(vehicle).state.fuel
+```
+
+Now you can get or set the value of the Statebag in this ways
+
+```lua title="Get Fuel Level"
+    local vehicle = NetToVeh(netId)
+
+    local fuel = Entity(vehicle).state.fuel
+```
+
+```lua title="Set Fuel Level"
+    local vehicle = NetToVeh(netId)
+    
+    Entity(vehicle).state.fuel = 100
+```

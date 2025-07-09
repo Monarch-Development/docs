@@ -1,0 +1,43 @@
+---
+title: Client
+icon: User
+description: Here you'll find all client functions
+---
+
+## How to set/get fuel?
+First you need to retrieve the vehicle entity handle (with ox_lib `cache.vehicle`)
+
+```lua title="Retrieve Vehicle Entity"
+    local playerPed = PlayerPedId()
+    local vehicle = GetVehiclePedIsIn(playerPed, false)
+```
+
+Then you need to set the statebag for get/set the fuel
+
+```lua title="Statebag Setup"
+    -- previous locals to get the vehicle entity
+    Entity(vehicle).state.fuel
+```
+
+Now you can get or set the value of the Statebag in this ways
+
+```lua title="Get Fuel Level"
+    local playerPed = PlayerPedId()
+    local vehicle = GetVehiclePedIsIn(playerPed, false)
+    
+    local fuel = Entity(vehicle).state.fuel
+```
+
+```lua title="Set Fuel Level"
+    local playerPed = PlayerPedId()
+    local vehicle = GetVehiclePedIsIn(playerPed, false)
+    
+    Entity(vehicle).state.fuel = 100
+```
+
+```lua title="Set Fuel Level (with server replication)"
+    local playerPed = PlayerPedId()
+    local vehicle = GetVehiclePedIsIn(playerPed, false)
+    
+    Entity(vehicle).state:set("fuel", 100, true)
+```
