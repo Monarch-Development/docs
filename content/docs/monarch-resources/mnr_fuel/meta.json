@@ -1,6 +1,6 @@
 {
     "title": "mnr_fuel",
     "icon": "Fuel",
-    "pages": ["installation", "configuration"],
+    "pages": ["installation", "configuration", "functions"],
     "defaultOpen": false
 }
